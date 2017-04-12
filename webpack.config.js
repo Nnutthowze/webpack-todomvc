@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = env => {
     return {
         context: path.resolve('src'), // the base directory, an absolute path, for resolving entry points and loaders from configuration
-        entry: './app.js', // the point or points to enter the application
+        entry: './bootstrap.js', // the point or points to enter the application
         output: {
             path: path.resolve('dist'), // where to save bundle
             filename: 'bundle.js', // bundle name

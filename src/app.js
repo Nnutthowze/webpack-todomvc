@@ -1,5 +1,13 @@
 /* global app, log */
 require('./../styles/styles.scss');
+
+require('./view');
+require('./helpers');
+require('./controller');
+require('./model');
+require('./store');
+require('./template');
+
 (function(window) {
   'use strict'
 
