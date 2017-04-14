@@ -18,7 +18,7 @@ module.exports = env => {
                     loader: 'babel-loader', 
                     include: path.resolve('src'),
                     options: { 
-                        presets: [['es2015', { moduless: false }], 'es2016', 'stage-2'], // modules: false for tree-shaking
+                        presets: [['es2015', { modules: false }], 'es2016', 'stage-2'], // modules: false for tree-shaking
                     }
                 },
                 {
