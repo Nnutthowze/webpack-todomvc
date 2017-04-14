@@ -18,7 +18,7 @@ module.exports = env => {
                     loader: 'babel-loader', 
                     include: path.resolve('src'),
                     options: { 
-                        presets: [['es2015', { module: false }], 'es2016', 'stage-2'], 
+                        presets: [['es2015', { moduless: false }], 'es2016', 'stage-2'], // modules: false for tree-shaking
                     }
                 },
                 {
@@ -31,9 +31,9 @@ module.exports = env => {
                                 loader: 'css-loader',
                                 options: {
                                     sourceMap: true,
-                                    // modules: true, => for react
+                                    // modules: true, // for react
                                     importLoaders: true,
-                                    // localIdentName: "[name]__[local]___[hash:base64:5]" => for react
+                                    // localIdentName: "[name]__[local]___[hash:base64:5]" // for react
                                 }
                             },
                             {
@@ -58,7 +58,9 @@ module.exports = env => {
             ],
         },
         plugins: [
-            new ExtractTextPlugin('/css/styles.css'),
+            new ExtractTextPlugin({
+                filename: 'style.css'
+            }),
         ],
         devtool: env.prod ? 'source-map' : 'eval', // source-maps for prod and dev
     }
